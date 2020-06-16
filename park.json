@@ -1,0 +1,34 @@
+[
+    {
+        "parkingID":7,
+        "vehicleType": "1",
+        "vehicle":"SSR 2341",
+        "floorID":1,
+        "startTime":"02:30",
+        "endTime:":"0300"
+    },
+    {
+        "parkingID":16,
+        "vehicleType": "2",
+        "vehicle":"PQR 2341",
+        "floorID":1,
+        "startTime":"12:30",
+        "endTime:":"14:00"
+    },
+    {
+        "parkingID":35,
+        "vehicleType": "2",
+        "vehicle":"MJT 8676",
+        "floorID":1,
+        "startTime":"12:30",
+        "endTime:":"1400"
+    },
+    {
+        "parkingID":34,
+        "vehicleType": "1",
+        "vehicle":"JLP 0964",
+        "floorID":2,
+        "startTime":"16:00",
+        "endTime":"17:30"
+    }
+]
