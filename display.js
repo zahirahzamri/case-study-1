@@ -164,7 +164,6 @@ let addVehicle = (parkingID, vehicleType, vehicleID, floorID, startanswer, endan
 }
 
 let enterJson = () => {
-    
     // STEP 2: Adding new data to park object 
     content.push(dataInput);
    
@@ -183,11 +182,11 @@ let enterJson = () => {
 let checkVehicle = (vehicleID) => {
     
     for(let i in content) {
-        if(vehicleID!=content[i].vehicleID){
+        if(vehicleID != content[i].vehicleID){
             totalfare(content[i].vehicleType,content[i].startTime, content[i].endTime);
             break;
         }
-      
+      //break;
     }
 }
 
@@ -196,8 +195,9 @@ var calc;
 var result;
 
 let totalfare = (vehicleType,time1, time2 ) => {
-    time1=parseInt(time1)
-    time2=parseInt(time2)
+    time1=parseInt(time1);
+    time2=parseInt(time2);
+
     if (vehicleType == "1") {
         if (time2 - time1 > 5){
             console.log("Your Total Fare is : RM 50")
