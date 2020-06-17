@@ -182,46 +182,43 @@ let enterJson = () => {
 // new arrow function --- checking json data -- Handani & Ain
 let checkVehicle = (vehicleID) => {
     
+    //if Vehicle ID do match with the content in Park.json
     for(let i in content) {
-        if(vehicleID != content[i].vehicleID){
+        if(vehicleID == content[i].vehicle){
             totalfare(content[i].vehicleType,content[i].startTime, content[i].endTime);
             break;
         }
-      //break;
+        // If Vehicle ID does not match
+        else { 
+          console.log((`There is no parking record of : ${vehicleID}`));
+          break;
+        }
     }
 }
 
 // Calculate the fare of the vehicle
-var calc;
-var result;
-
-let totalfare = (vehicleType,time1, time2 ) => {
-    time1=parseInt(time1);
-    time2=parseInt(time2);
-
-    if (vehicleType == "1") {
-        if (time2 - time1 > 5){
-            console.log("Your Total Fare is : RM 50")
-        }
-        else {
-            calc = ((time2 - time1) * 3);
-            result = calc.toFixed(2);           // fixed the calculation answers in 2 d.p and store in results
-            console.log(`Your Total Fare is : RM ${result}`)
-        }
+let totalfare = (vehicleType,starttime, endtime ) => {
+    console.log(`Start time : ${starttime} \t End time ${endtime}`)
+// Convert hours to numbers to make it easy for the calculation.
+    let stime = parseInt(starttime) +((starttime-parseInt(starttime))/0.6)
+    let etime = parseInt(endtime) + ((endtime-parseInt(endtime))/0.6)
+// Check if the duration of the vehicle is more than 5 hours, fine RM50
+    if ( etime-stime > 5){
+        console.log(`\tTime : ${(etime-stime).toFixed(2)} hours. \n `)  // fixed the number that will show with 2 decimal places
+        console.log("\tYou have exceed the limit of 5 hours. Fine RM50.")   
     }
-    else if (vehicleType == "2") {
-        // if the time of the vehicle are more than 5 hours, they will be fine with RM50.
-        if (time2 - time1 > 5){
-            console.log("Your Total Fare is : RM 50")
-        }
-        else {
-            calc = ((time2 - time1) * 1.5);
-            result = calc.toFixed(2);
-            console.log(`Your Total Fare is : RM ${result}`)
-        }
+//The fare for Car.
+    else if (vehicleType=="1"){
+        console.log(`\tTime : ${(endtime-starttime).toFixed(2)} hours. \n `)  // fixed the number that will show with 2 decimal places
+        console.log(`\tYour Total Fare is : RM ${(etime-stime).toFixed(2)*3}`) // The fare for Car is RM3 per hour
     }
+//The fare for Motorcycle
+    else if (vehicleType=="2"){
+        console.log(`\tTime : ${(endtime-starttime).toFixed(2)} hours. \n `)  // fixed the number that will show with 2 decimal places
+        console.log(`\tYour Total Fare is : RM ${(etime-stime).toFixed(2)*1.5}`)  // The fare for Motorcycle is RM 1.50 per hour
+    }
+//these means something wrong with the vehicletype data.
     else{
         console.log('Wrong input. Try again'); 
     }
-
 }
