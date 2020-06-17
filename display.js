@@ -25,6 +25,7 @@ rl.question('\nChoice: ', (answer) => {
     
             let date = rl.question(`\nOn what date ?(Format: MM-DD-YYYY): `, (dateanswer) => {
                 console.log(`Date entered: ${dateanswer}`);
+                console.log('\nPlease put decimal for entering time --> e.g 11.40, 14.50');
 
                 let start = rl.question(`\nStart From?(hh:mm (24-Hours)): `, (startanswer) => {
                     console.log(`Start time: ${startanswer}`);
