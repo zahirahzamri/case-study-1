@@ -68,7 +68,7 @@ rl.question('\nChoice: ', (answer) => {
     }
 });
 
-// new arrow function to put random parkingID
+// new arrow function to put random parkingID -- Izyan
 let storeParkingID = [];
 
 let randomParkingID = () => {
@@ -84,7 +84,7 @@ let floorID;
 var dataInput = {};
 let parkingID = randomParkingID();
 
-// new arrow function 
+// new arrow function -- Izyan
 let Vacancy = (startanswer, endanswer) => {
     startanswer = new Date(startanswer).getTime();
     endanswer = new Date(endanswer).getTime();
@@ -102,7 +102,7 @@ let Vacancy = (startanswer, endanswer) => {
 
 };
 
-//new arrow function
+//new arrow function -- Zahirah
 let parkVehicle = (startanswer, endanswer) => {
     let startTime = startanswer;
     let endTime = endanswer;
@@ -162,14 +162,13 @@ let parkVehicle = (startanswer, endanswer) => {
 }
 
 
-// new arrow function to push json data into array
+// new arrow function to push json data into array -- Zahirah
 let addVehicle = (parkingID, vehicleType, vehicleID, floorID, startanswer, endanswer) => {
     let startTime = startanswer;
     let endTime = endanswer;
     parked.push(new myImport.Park(parkingID, vehicleType, vehicleID, floorID, startTime, endTime));
 }
 
-// var dataInput = {};
 let enterJson = () => {
     
     // STEP 2: Adding new data to park object 
@@ -186,7 +185,7 @@ let enterJson = () => {
    
 }
 
-// new arrow function --- checking json data
+// new arrow function --- checking json data -- Handani & Ain
 let checkVehicle = (vehicleID) => {
     
     for(let i in content) {
@@ -200,7 +199,7 @@ let checkVehicle = (vehicleID) => {
 
 
 
-// Calculate the fare of the vehicle
+// Calculate the fare of the vehicle -- Handani & Ain
 let totalfare = (vehicleType,time1, time2 ) => {
     time1=parseInt(time1)
     time2=parseInt(time2)
