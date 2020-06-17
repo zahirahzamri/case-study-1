@@ -36,14 +36,11 @@ rl.question('\nChoice: ', (answer) => {
 
                     Vacancy(startanswer, endanswer);
                     parkVehicle(startanswer, endanswer);
-                    
                 });
             });
-          
          });    
-     
     }
-   
+
     else if (answer == 2){
         console.log('Pay Page');
         pay = rl.question('Enter your vehicle ID: ', (answer2) => {
@@ -53,15 +50,12 @@ rl.question('\nChoice: ', (answer) => {
             
             rl.close();
         });
-        
     }
-
     else if (answer == 3){
         console.log('Thank you for coming');
         rl.close();
 
     }
-    
     else{
         console.log('Wrong input');
         rl.close();
@@ -190,16 +184,17 @@ let checkVehicle = (vehicleID) => {
     
     for(let i in content) {
         if(vehicleID!=content[i].vehicleID){
-            console.log(content[i]);
             totalfare(content[i].vehicleType,content[i].startTime, content[i].endTime);
+            break;
         }
       
     }
 }
 
+// Calculate the fare of the vehicle
+var calc;
+var result;
 
-
-// Calculate the fare of the vehicle -- Handani & Ain
 let totalfare = (vehicleType,time1, time2 ) => {
     time1=parseInt(time1)
     time2=parseInt(time2)
@@ -208,8 +203,8 @@ let totalfare = (vehicleType,time1, time2 ) => {
             console.log("Your Total Fare is : RM 50")
         }
         else {
-            var calc = ((time2 - time1) * 3);
-            var result = calc.toFixed(2);           // fixed the calculation answers in 2 d.p and store in results
+            calc = ((time2 - time1) * 3);
+            result = calc.toFixed(2);           // fixed the calculation answers in 2 d.p and store in results
             console.log(`Your Total Fare is : RM ${result}`)
         }
     }
@@ -219,12 +214,11 @@ let totalfare = (vehicleType,time1, time2 ) => {
             console.log("Your Total Fare is : RM 50")
         }
         else {
-            var calc = ((time2 - time1) * 1.5);
-            var result = calc.toFixed(2);
+            calc = ((time2 - time1) * 1.5);
+            result = calc.toFixed(2);
             console.log(`Your Total Fare is : RM ${result}`)
         }
     }
-
     else{
         console.log('Wrong input. Try again'); 
     }
