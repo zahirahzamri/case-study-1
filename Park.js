@@ -4,7 +4,7 @@ class Park {
         this.parkingID = parkingID;
         this.vehicleID = vehicleID;
         this.floorID = floorID;
-        this.startTime = startTime;
+        this.startTime = startTime;  
         this.endTime = endTime;
     }
 
@@ -16,7 +16,7 @@ class Park {
     }
     get floorID() {
         return this._floorID;
-    }
+    }klkl
     get startTime() {
         return this._startTime;
     }
