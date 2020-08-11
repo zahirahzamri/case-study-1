@@ -16,7 +16,7 @@ class Park {
     }
     get floorID() {
         return this._floorID;
-    }klkl
+    }
     get startTime() {
         return this._startTime;
     }
